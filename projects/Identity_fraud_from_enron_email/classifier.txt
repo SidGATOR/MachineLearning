@@ -1,0 +1,51 @@
+Number of POI in the dataset 18
+removing key-value pair TOTAL
+Accuracy without scaling of features 0.897
+Accuracy with scaling of features 0.897
+------------------NEW CLASSIFIER---SVC------------------
+Time taken 3.348 s
+('Accuracy score: ', '0.897435897436')
+('Precision score: ', '0.0')
+('Recall score: ', '0.0')
+('F1 score: ', '0.0')
+------------------NEW CLASSIFIER---Gaussian------------------
+Time taken 0.138 s
+('Accuracy score: ', '0.871794871795')
+('Precision score: ', '0.333333333333')
+('Recall score: ', '0.25')
+('F1 score: ', '0.285714285714')
+------------------NEW CLASSIFIER---DT------------------
+Time taken 1.184 s
+('Accuracy score: ', '0.897435897436')
+('Precision score: ', '0.0')
+('Recall score: ', '0.0')
+('F1 score: ', '0.0')
+------------------NEW CLASSIFIER---ADABOOST------------------
+Time taken 14.478 s
+('Accuracy score: ', '0.897435897436')
+('Precision score: ', '0.0')
+('Recall score: ', '0.0')
+('F1 score: ', '0.0')
+------------------NEW CLASSIFIER---RandomForest------------------
+Time taken 6.387 s
+('Accuracy score: ', '0.846153846154')
+('Precision score: ', '0.0')
+('Recall score: ', '0.0')
+('F1 score: ', '0.0')
+--------------------------------------
+Pipeline(steps=[('reduce_dim', PCA(copy=True, iterated_power='auto', n_components=2, random_state=None,
+  svd_solver='auto', tol=0.0, whiten=False)), ('clf1', SVC(C=1000.0, cache_size=200, class_weight='balanced', coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.1, kernel='poly',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False))])
+------------------FINAL CLASSIFIER------------------
+Time taken 6.390 s
+('Accuracy score: ', '0.871794871795')
+('Precision score: ', '0.333333333333')
+('Recall score: ', '0.25')
+('F1 score: ', '0.285714285714')
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=15, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')
