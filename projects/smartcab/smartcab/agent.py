@@ -112,11 +112,8 @@ class LearningAgent(Agent):
         # When learning, check if the 'state' is not in the Q-table
         # If it is not, create a new dictionary for that state
         #   Then, for each action available, set the initial Q-value to 0.0
-        if self.learning == True:
-            if self.Q.get(state)== None:
-                self.Q[state] = {}
-                for action in self.valid_actions:
-                    self.Q[state][action] = 0.0
+        if self.learning == True and (state not in self.Q):
+            self.Q[state] = {action : 0.0 for action in self.valid_actions}
         """
         if self.learning:
             action_list = self.valid_actions
@@ -140,17 +137,16 @@ class LearningAgent(Agent):
 
 
         # Set the agent state and default action
-        action_list = self.valid_actions
         if not self.learning:
             self.state = state
             self.next_waypoint = self.planner.next_waypoint()
-            action = random.choice(action_list)
+            action = random.choice(self.valid_actions)
 
         else:
             self.state = state
             self.next_waypoint = self.planner.next_waypoint()
             if self.epsilon > random.random():
-                action = random.choice(action_list)
+                action = random.choice(self.valid_actions)
             else:
 
                 action = [k for k,v in self.Q[state].items() if v == self.get_maxQ(state)]
