@@ -132,10 +132,10 @@ def channel_results(reduced_data, outliers, pca_samples):
 
 	# Check that the dataset is loadable
 	try:
-	    full_data = pd.read_csv("customers.csv")
+		full_data = pd.read_csv("customers.csv")
 	except:
-	    print "Dataset could not be loaded. Is the file missing?"
-	    return False
+		print("Dataset could not be loaded. Is the file missing?")
+		return False
 
 	# Create the Channel DataFrame
 	channel = pd.DataFrame(full_data['Channel'], columns = ['Channel'])
